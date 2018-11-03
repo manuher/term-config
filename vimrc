@@ -44,6 +44,7 @@ Plugin 'yegappan/mru'
 Plugin 'majutsushi/tagbar'
 Plugin 'chrisbra/NrrwRgn'
 Plugin '907th/vim-auto-save'
+Plugin 'easymotion/vim-easymotion'
 
 " vim snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
