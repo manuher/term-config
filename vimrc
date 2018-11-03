@@ -75,7 +75,7 @@ set clipboard^=unnamed,unnamedplus
 
 let mapleader = ','
 
-nnoremap <Leader><Leader> :e#<CR>
+nnoremap <Leader>. :e#<CR>
 
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
