@@ -47,6 +47,8 @@ Plugin '907th/vim-auto-save'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
 Plugin 'mhinz/vim-signify'
+Plugin 'gregsexton/gitv'
+Plugin 'sodapopcan/vim-twiggy'
 
 " vim snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -121,6 +123,9 @@ set showmatch
 set diffopt+=vertical
 
 set updatetime=500
+
+" Gitv
+let g:Gitv_DoNotMapCtrlKey = 1
 
 " Vim signify
 let g:signify_realtime = 1
