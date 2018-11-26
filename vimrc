@@ -128,7 +128,7 @@ set updatetime=500
 let g:Gitv_DoNotMapCtrlKey = 1
 
 " Vim signify
-let g:signify_realtime = 1
+let g:signify_realtime = 0
 
 " Ale config
 " Enable completion where available.
@@ -198,11 +198,10 @@ let g:tmuxline_preset = 'solarized'
 " let g:tmuxline_preset = 'nightly_fox'
 let g:tmuxline_preset = {
       \'a'    : '#S',
-      \'c'    : ['#(whoami)', '#(uptime | cut -d " " -f 1,2,3)'],
+      \'c'    : ['#(whoami)', '#(uptime -p)'],
       \'win'  : ['#I', '#W'],
       \'cwin' : ['#I', '#W', '#F'],
-      \'x'    : '#(date)',
-      \'y'    : ['%R', '%a', '%Y'],
+      \'y'    : ['%R:%S', '%a', '%b %d', '%Y'],
       \'z'    : '#H'}
 
 "Tagbar
