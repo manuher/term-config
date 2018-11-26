@@ -198,7 +198,8 @@ let g:tmuxline_preset = 'solarized'
 " let g:tmuxline_preset = 'nightly_fox'
 let g:tmuxline_preset = {
       \'a'    : '#S',
-      \'c'    : ['#(whoami)', '#(uptime -p)'],
+      \'b'    : '#(whoami)',
+      \'c'    : '#(uptime -p)',
       \'win'  : ['#I', '#W'],
       \'cwin' : ['#I', '#W', '#F'],
       \'y'    : ['%R:%S', '%a', '%b %d', '%Y'],
