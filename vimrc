@@ -28,6 +28,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
 Plugin 'w0rp/ale'
@@ -184,17 +185,20 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 set background=dark
 let g:solarized_diffmode="high"
-colorscheme solarized
+colorscheme base16-solarized-dark
 
-"let g:airline_theme='luna'
-let g:airline_theme='solarized'
+let g:airline_theme='base16'
 let g:airline_solarized_bg='dark'
 
 " Tmuxline
-let g:tmuxline_preset = 'solarized'
+let g:tmuxline_preset = 'base16'
 " let g:tmuxline_preset = 'nightly_fox'
 let g:tmuxline_preset = {
       \'a'    : '#S',

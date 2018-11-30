@@ -11,10 +11,12 @@ vim
 omf
 fonts-powerline
 universal-ctags
+base16-shell
 
 
 ```
 sudo apt install git fish tmux fonts-powerline universal-ctags
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 ```
 
 ## Installing
