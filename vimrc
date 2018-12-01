@@ -50,6 +50,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'mhinz/vim-signify'
 Plugin 'gregsexton/gitv'
 Plugin 'sodapopcan/vim-twiggy'
+Plugin 'tpope/vim-obsession'
+Plugin 'dhruvasagar/vim-prosession'
 
 " vim snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
