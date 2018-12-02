@@ -12,7 +12,7 @@ bind yy fish_clipboard_copy
 bind Y fish_clipboard_copy
 bind p fish_clipboard_paste
 
-set -g theme_color_scheme base16-dark
+set -g theme_color_scheme terminal2
 
 fish_vi_key_bindings
 set -U theme_nerd_fonts no
