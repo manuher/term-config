@@ -132,6 +132,21 @@ let g:Gitv_DoNotMapCtrlKey = 1
 
 " Vim signify
 let g:signify_realtime = 0
+"
+" Fix highlighting for spell checks in terminal
+function! s:base16_customize() abort
+  " Colors: https://github.com/chriskempson/base16/blob/master/styling.md
+  " Arguments: group, guifg, guibg, ctermfg, ctermbg, attr, guisp
+  call Base16hi("SpellBad",   "", "", g:base16_cterm08, g:base16_cterm00, "", "")
+  call Base16hi("SpellCap",   "", "", g:base16_cterm0A, g:base16_cterm00, "", "")
+  call Base16hi("SpellLocal", "", "", g:base16_cterm0D, g:base16_cterm00, "", "")
+  call Base16hi("SpellRare",  "", "", g:base16_cterm0B, g:base16_cterm00, "", "")
+endfunction
+
+augroup on_change_colorschema
+  autocmd!
+  autocmd ColorScheme * call s:base16_customize()
+augroup END
 
 " Ale config
 " Enable completion where available.
@@ -142,6 +157,8 @@ map <F3> :ALEGoToDefinition<CR>
 map <leader>f :ALEFix<CR>
 map <leader>aj :ALENext<cr>
 map <leader>ak :ALEPrevious<cr>
+
+" highlight ALEError ctermbg=none cterm=underline
 
 " Fix bug escape airline
 if ! has('gui_running')
