@@ -52,6 +52,7 @@ Plugin 'gregsexton/gitv'
 Plugin 'sodapopcan/vim-twiggy'
 Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-prosession'
+Plugin 'Raimondi/delimitMate'
 
 " vim snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
