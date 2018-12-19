@@ -61,6 +61,9 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 " /vim snippets
 
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -75,6 +78,7 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+set encoding=UTF-8
 
 set shell=/bin/bash
 set colorcolumn=100
