@@ -15,7 +15,7 @@ bind p fish_clipboard_paste
 set -g theme_color_scheme terminal2
 
 fish_vi_key_bindings
-set -U theme_nerd_fonts no
+set -U theme_nerd_fonts yes
 set -g theme_display_git_master_branch yes
 
 # Base16 Shell
