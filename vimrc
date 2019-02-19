@@ -231,6 +231,7 @@ let g:tmuxline_preset = {
       \'c'    : '#(uptime -p)',
       \'win'  : ['#I', '#W'],
       \'cwin' : ['#I', '#W', '#F'],
+      \'x'    : '#(curl wttr.in?format=+%%l:%%t+%%w)',
       \'y'    : ['%R:%S', '%a', '%b %d', '%Y'],
       \'z'    : '#H'}
 
