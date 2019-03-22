@@ -133,6 +133,12 @@ set diffopt+=vertical
 
 set updatetime=500
 
+" Map fugitive Gdiff 
+nmap <leader>gd :Gdiff<CR>
+
+" Map fugitive Gstatus 
+nmap <leader>gs :Gstatus<CR>
+
 " Gitv
 let g:Gitv_DoNotMapCtrlKey = 1
 
