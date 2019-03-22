@@ -215,12 +215,9 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
-set background=dark
-let g:solarized_diffmode="high"
-colorscheme base16-solarized-dark
-
 let g:airline_theme='base16'
 let g:airline_solarized_bg='dark'
+hi Normal ctermbg=NONE guibg=NONE
 
 " Tmuxline
 let g:tmuxline_preset = 'base16'
