@@ -86,6 +86,8 @@ set colorcolumn=100
 set belloff=all
 set clipboard^=unnamed,unnamedplus
 
+set mouse=a
+
 let mapleader = ','
 
 nnoremap <Leader>. :e#<CR>
