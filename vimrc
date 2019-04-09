@@ -87,6 +87,7 @@ set belloff=all
 set clipboard^=unnamed,unnamedplus
 
 set mouse=a
+set ttymouse=xterm2
 
 let mapleader = ','
 
