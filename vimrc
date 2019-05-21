@@ -33,6 +33,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
 Plugin 'w0rp/ale'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Bundle 'edkolev/tmuxline.vim'
@@ -54,6 +55,8 @@ Plugin 'sodapopcan/vim-twiggy'
 Plugin 'tpope/vim-obsession'
 Plugin 'dhruvasagar/vim-prosession'
 Plugin 'Raimondi/delimitMate'
+Plugin 'plytophogy/vim-virtualenv'
+Plugin 'ekalinin/dockerfile.vim'
 
 " vim snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -87,7 +90,9 @@ set belloff=all
 set clipboard^=unnamed,unnamedplus
 
 set mouse=a
-set ttymouse=xterm2
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 
 let mapleader = ','
 
@@ -136,6 +141,8 @@ set diffopt+=vertical
 
 set updatetime=500
 
+set nohlsearch
+
 " Map fugitive Gdiff
 nmap <leader>gd :Gdiff<CR>
 
@@ -144,6 +151,7 @@ nmap <leader>gs :Gstatus<CR>
 
 " Map fugitive Gblame
 nmap <leader>gb :Gblame<CR>
+" let g:github_enterprise_urls
 
 " Gitv
 let g:Gitv_DoNotMapCtrlKey = 1
@@ -170,9 +178,14 @@ augroup END
 " Enable completion where available.
 let g:ale_completion_enabled = 1
 let g:ale_fixers = {'javascript': ['prettier', 'eslint'],
-                   \'typescript':['tslint']}
-map <F3> :ALEGoToDefinition<CR>
-map <leader>f :ALEFix<CR>
+                   \'typescript':['tslint'],
+                   \'python':['autopep8']}
+
+let g:ale_linters = {'python':['pyls']}
+
+map <leader>d :ALEGoToDefinition<CR>
+map <leader>fr :ALEFindReferences<CR>
+map <leader>fix :ALEFix<CR>
 map <leader>aj :ALENext<cr>
 map <leader>ak :ALEPrevious<cr>
 
