@@ -26,3 +26,8 @@ if status --is-interactive
     set BASE16_SHELL "$HOME/.config/base16-shell"
     source "$BASE16_SHELL/profile_helper.fish"
 end
+
+function git-prune
+  git remote prune origin
+  git fetch -p && for branch in (git branch -vv | grep ': gone]' | awk '{print $1}'); git branch -D $branch; end
+end
