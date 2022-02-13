@@ -32,18 +32,20 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
 Plugin 'w0rp/ale'
+Plugin 'puremourning/vimspector'
+Plugin 'sagi-z/vimspectorpy', { 'do': { -> vimspectorpy#update() } }
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Bundle 'edkolev/tmuxline.vim'
+Plugin 'edkolev/tmuxline.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Plugin 'Nopik/vim-nerdtree-direnter'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'yegappan/mru'
+" Plugin 'yegappan/mru'
 Plugin 'majutsushi/tagbar'
 Plugin 'chrisbra/NrrwRgn'
 Plugin '907th/vim-auto-save'
@@ -57,6 +59,7 @@ Plugin 'dhruvasagar/vim-prosession'
 Plugin 'Raimondi/delimitMate'
 Plugin 'plytophogy/vim-virtualenv'
 Plugin 'ekalinin/dockerfile.vim'
+Plugin 'will133/vim-dirdiff'
 
 " vim snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -67,6 +70,8 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+Plugin 'chrisbra/csv.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -85,7 +90,7 @@ filetype plugin indent on    " required
 set encoding=UTF-8
 
 set shell=/bin/bash
-set colorcolumn=100
+set colorcolumn=88
 set belloff=all
 set clipboard^=unnamed,unnamedplus
 
@@ -112,18 +117,19 @@ xmap <leader>e <Plug>NrrwrgnDo
 xmap <leader>E <Plug>NrrwrgnBangDo
 
 " Reload config
-map <c-s> :source ~/.vimrc<CR>
+map <leader>S :source ~/.vimrc<CR>
 
 syntax on
 " set colorcolumn=90
 
-set number relativenumber
+set number norelativenumber
+" set number relativenumber
 
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
+" augroup numbertoggle
+  " autocmd!
+  " autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  " autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+" augroup END
 
 set hidden
 set history=100
@@ -144,13 +150,13 @@ set updatetime=500
 set nohlsearch
 
 " Map fugitive Gdiff
-nmap <leader>gd :Gdiff<CR>
+nmap <leader>gd :Git diff<CR>
 
 " Map fugitive Gstatus
-nmap <leader>gs :Gstatus<CR>
+nmap <leader>gs :Git<CR>
 
 " Map fugitive Gblame
-nmap <leader>gb :Gblame<CR>
+nmap <leader>gb :Git blame<CR>
 " let g:github_enterprise_urls
 
 " Gitv
@@ -174,14 +180,30 @@ augroup on_change_colorschema
   autocmd ColorScheme * call s:base16_customize()
 augroup END
 
+" Vimspector config
+let g:vimspector_enable_mappings = 'HUMAN'
+" for normal mode - the word under the cursor
+nmap <Leader>di <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+xmap <Leader>di <Plug>VimspectorBalloonEval
+
+nmap <Leader><F3> :VimspectorReset<CR>
+nmap <Leader><F11> <Plug>VimspectorUpFrame
+nmap <Leader><F12> <Plug>VimspectorDownFrame
+
 " Ale config
 " Enable completion where available.
 let g:ale_completion_enabled = 1
 let g:ale_fixers = {'javascript': ['prettier', 'eslint'],
                    \'typescript':['tslint'],
-                   \'python':['autopep8']}
+                   \'python':['black', 'isort']}
 
-let g:ale_linters = {'python':['pyls']}
+let g:ale_linters = {'python':['pylint', 'mypy', 'flake8', 'pyls', 'bandit']}
+" let g:ale_linters_explicit = 1
+let g:ale_python_pyls_config = {'pyls': {'configurationSources': ['flake8']}}
+
+let g:ale_virtualenv_dir_names = ['.env', '.venv', 'env', 'python', 've', 'virtualenv', 'venv']
+" let g:ale_virtualenv_dir_names = []
 
 map <leader>d :ALEGoToDefinition<CR>
 map <leader>fr :ALEFindReferences<CR>
@@ -189,7 +211,6 @@ map <leader>fix :ALEFix<CR>
 map <leader>aj :ALENext<cr>
 map <leader>ak :ALEPrevious<cr>
 
-" highlight ALEError ctermbg=none cterm=underline
 
 " Fix bug escape airline
 if ! has('gui_running')
