@@ -21,6 +21,8 @@ set -g theme_display_git_master_branch yes
 
 set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
+set -x EDITOR nvim
+
 # Base16 Shell
 if status --is-interactive
     set BASE16_SHELL "$HOME/.config/base16-shell"
