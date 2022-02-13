@@ -194,11 +194,15 @@ nmap <Leader><F12> <Plug>VimspectorDownFrame
 " Ale config
 " Enable completion where available.
 let g:ale_completion_enabled = 1
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'],
+let g:ale_completion_autoimport = 1
+let g:ale_fixers = {'*': ['trim_whitespace', 'remove_trailing_lines'],
+                   \'javascript': ['prettier', 'eslint'],
                    \'typescript':['tslint'],
-                   \'python':['black', 'isort']}
+                   \'python':['black', 'isort'],
+                   \'rust': ['rustfmt']}
 
-let g:ale_linters = {'python':['pylint', 'mypy', 'flake8', 'pyls', 'bandit']}
+let g:ale_linters = {'python':['pylint', 'mypy', 'flake8', 'pyls', 'bandit'],
+                    \'rust': ['rls']}
 " let g:ale_linters_explicit = 1
 let g:ale_python_pyls_config = {'pyls': {'configurationSources': ['flake8']}}
 
