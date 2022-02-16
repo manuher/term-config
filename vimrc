@@ -150,7 +150,7 @@ set updatetime=500
 set nohlsearch
 
 " Map fugitive Gdiff
-nmap <leader>gd :Git diff<CR>
+nmap <leader>gd :Gdiff<CR>
 
 " Map fugitive Gstatus
 nmap <leader>gs :Git<CR>
