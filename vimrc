@@ -149,6 +149,8 @@ set updatetime=500
 
 set nohlsearch
 
+autocmd FileType qf wincmd J
+
 " Map fugitive Gdiff
 nmap <leader>gd :Gdiff<CR>
 
