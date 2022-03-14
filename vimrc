@@ -101,7 +101,7 @@ endif
 
 let mapleader = ','
 
-nnoremap <Leader>. :e#<CR>
+nnoremap <leader>. :e#<CR>
 
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -109,8 +109,8 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " replace shortcut
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
-nnoremap <Leader>S :s/\<<C-r><C-w>\>/
+nnoremap <leader>s :%s/\<<C-r><C-w>\>/
+nnoremap <leader>S :s/\<<C-r><C-w>\>/
 
 " leader+e to edit selection in new window
 xmap <leader>e <Plug>NrrwrgnDo
@@ -185,13 +185,13 @@ augroup END
 " Vimspector config
 let g:vimspector_enable_mappings = 'HUMAN'
 " for normal mode - the word under the cursor
-nmap <Leader>di <Plug>VimspectorBalloonEval
+nmap <leader>di <Plug>VimspectorBalloonEval
 " for visual mode, the visually selected text
-xmap <Leader>di <Plug>VimspectorBalloonEval
+xmap <leader>di <Plug>VimspectorBalloonEval
 
-nmap <Leader><F3> :VimspectorReset<CR>
-nmap <Leader><F11> <Plug>VimspectorUpFrame
-nmap <Leader><F12> <Plug>VimspectorDownFrame
+nmap <leader><F3> :VimspectorReset<CR>
+nmap <leader><F11> <Plug>VimspectorUpFrame
+nmap <leader><F12> <Plug>VimspectorDownFrame
 
 " Ale config
 " Enable completion where available.
@@ -359,16 +359,16 @@ nmap <leader>r :CtrlPMRU<cr>
 
 
 " Install plugins
-map <Leader>I :PluginInstall<CR>
+map <leader>I :PluginInstall<CR>
 
 " Prompt for a command to run
-map <Leader>vp :VimuxPromptCommand<CR>
+map <leader>vp :VimuxPromptCommand<CR>
 
 " Run last command executed by VimuxRunCommand
-map <Leader>vl :VimuxRunLastCommand<CR>
+map <leader>vl :VimuxRunLastCommand<CR>
 
 " Inspect runner pane
-map <Leader>vi :VimuxInspectRunner<CR>
+map <leader>vi :VimuxInspectRunner<CR>
 
 " Zoom the tmux runner pane
-map <Leader>vz :VimuxZoomRunner<CR>
+map <leader>vz :VimuxZoomRunner<CR>
