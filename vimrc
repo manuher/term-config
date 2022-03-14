@@ -185,9 +185,9 @@ augroup END
 " Vimspector config
 let g:vimspector_enable_mappings = 'HUMAN'
 " for normal mode - the word under the cursor
-nmap <leader>di <Plug>VimspectorBalloonEval
+nmap <leader>i <Plug>VimspectorBalloonEval
 " for visual mode, the visually selected text
-xmap <leader>di <Plug>VimspectorBalloonEval
+xmap <leader>i <Plug>VimspectorBalloonEval
 
 nmap <leader><F3> :VimspectorReset<CR>
 nmap <leader><F11> <Plug>VimspectorUpFrame
