@@ -203,10 +203,10 @@ let g:ale_fixers = {'*': ['trim_whitespace', 'remove_trailing_lines'],
                    \'python':['black', 'isort'],
                    \'rust': ['rustfmt']}
 
-let g:ale_linters = {'python':['pylint', 'mypy', 'flake8', 'pyls', 'bandit'],
+let g:ale_linters = {'python':['pylint', 'mypy', 'flake8', 'pylsp', 'bandit'],
                     \'rust': ['rls']}
 " let g:ale_linters_explicit = 1
-let g:ale_python_pyls_config = {'pyls': {'configurationSources': ['flake8']}}
+let g:ale_python_pylsp_config = {'pylsp': {'configurationSources': ['flake8']}}
 
 let g:ale_virtualenv_dir_names = ['.env', '.venv', 'env', 'python', 've', 'virtualenv', 'venv']
 " let g:ale_virtualenv_dir_names = []
