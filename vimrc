@@ -214,6 +214,7 @@ let g:ale_virtualenv_dir_names = ['.env', '.venv', 'env', 'python', 've', 'virtu
 map <leader>d :ALEGoToDefinition<CR>
 map <leader>fr :ALEFindReferences<CR>
 map <leader>fix :ALEFix<CR>
+map <leader>ah :ALEHover<cr>
 map <leader>aj :ALENext<cr>
 map <leader>ak :ALEPrevious<cr>
 
