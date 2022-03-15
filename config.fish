@@ -9,7 +9,7 @@ function fish_title;end
 alias vi 'nvim'
 alias vim 'nvim'
 
-alias pip_dev_installs 'pip install pip-tools python-language-server black isort flake8 mypy pylint pyls-black pyls-isort pyls-mypy'
+alias pip_dev_installs 'pip install pip-tools python-lsp-server black isort flake8 mypy pylint pyls-black pyls-isort pyls-mypy'
 
 bind yy fish_clipboard_copy
 bind Y fish_clipboard_copy
