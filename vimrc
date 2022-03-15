@@ -210,6 +210,8 @@ let g:ale_python_pylsp_config = {'pylsp': {'configurationSources': ['flake8']}}
 
 let g:ale_virtualenv_dir_names = ['.env', '.venv', 'env', 'python', 've', 'virtualenv', 'venv']
 " let g:ale_virtualenv_dir_names = []
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
 
 map <leader>d :ALEGoToDefinition<CR>
 map <leader>fr :ALEFindReferences<CR>
